@@ -2,10 +2,11 @@
 
 
 from flask import Flask, request, jsonify
-# import base64
 from controller import main
+from flask_cors import CORS
 
 app = Flask(__name__)
+CORS(app)
 
 @app.route("/upload", methods=["POST"])
 def upload_file():
